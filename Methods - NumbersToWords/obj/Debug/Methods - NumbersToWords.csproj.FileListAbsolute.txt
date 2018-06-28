@@ -1,0 +1,6 @@
+C:\mei\ICS4U-Christiana\Methods - NumbersToWords\bin\Debug\Methods - NumbersToWords.exe.config
+C:\mei\ICS4U-Christiana\Methods - NumbersToWords\bin\Debug\Methods - NumbersToWords.exe
+C:\mei\ICS4U-Christiana\Methods - NumbersToWords\bin\Debug\Methods - NumbersToWords.pdb
+C:\mei\ICS4U-Christiana\Methods - NumbersToWords\obj\Debug\Methods - NumbersToWords.exe
+C:\mei\ICS4U-Christiana\Methods - NumbersToWords\obj\Debug\Methods - NumbersToWords.pdb
+C:\mei\ICS4U-Christiana\Methods - NumbersToWords\obj\Debug\Methods - NumbersToWords.csprojResolveAssemblyReference.cache

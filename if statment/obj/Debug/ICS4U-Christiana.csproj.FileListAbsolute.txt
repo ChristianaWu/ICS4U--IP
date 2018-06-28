@@ -1,0 +1,6 @@
+C:\mei\ICS4U-Christiana\ICS4U-Christiana\bin\Debug\ICS4U-Christiana.exe.config
+C:\mei\ICS4U-Christiana\ICS4U-Christiana\bin\Debug\ICS4U-Christiana.exe
+C:\mei\ICS4U-Christiana\ICS4U-Christiana\bin\Debug\ICS4U-Christiana.pdb
+C:\mei\ICS4U-Christiana\ICS4U-Christiana\obj\Debug\ICS4U-Christiana.csprojResolveAssemblyReference.cache
+C:\mei\ICS4U-Christiana\ICS4U-Christiana\obj\Debug\ICS4U-Christiana.exe
+C:\mei\ICS4U-Christiana\ICS4U-Christiana\obj\Debug\ICS4U-Christiana.pdb

@@ -1,0 +1,5 @@
+C:\mei\ICS4U-Christiana\Loop-FibonacciSeries\bin\Debug\Loop-FibonacciSeries.exe.config
+C:\mei\ICS4U-Christiana\Loop-FibonacciSeries\bin\Debug\Loop-FibonacciSeries.exe
+C:\mei\ICS4U-Christiana\Loop-FibonacciSeries\bin\Debug\Loop-FibonacciSeries.pdb
+C:\mei\ICS4U-Christiana\Loop-FibonacciSeries\obj\Debug\Loop-FibonacciSeries.exe
+C:\mei\ICS4U-Christiana\Loop-FibonacciSeries\obj\Debug\Loop-FibonacciSeries.pdb

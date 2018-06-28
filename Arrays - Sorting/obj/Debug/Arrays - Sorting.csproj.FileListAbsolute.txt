@@ -1,0 +1,6 @@
+C:\mei\ICS4U-Christiana\Arrays - Sorting\bin\Debug\Arrays - Sorting.exe.config
+C:\mei\ICS4U-Christiana\Arrays - Sorting\bin\Debug\Arrays - Sorting.exe
+C:\mei\ICS4U-Christiana\Arrays - Sorting\bin\Debug\Arrays - Sorting.pdb
+C:\mei\ICS4U-Christiana\Arrays - Sorting\obj\Debug\Arrays - Sorting.exe
+C:\mei\ICS4U-Christiana\Arrays - Sorting\obj\Debug\Arrays - Sorting.pdb
+C:\mei\ICS4U-Christiana\Arrays - Sorting\obj\Debug\Arrays - Sorting.csprojResolveAssemblyReference.cache
