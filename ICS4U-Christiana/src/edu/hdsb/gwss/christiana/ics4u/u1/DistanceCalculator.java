@@ -19,7 +19,7 @@ import java.util.Scanner;
  * @author 1wuchr
  */
 public class DistanceCalculator {
-
+    
     /**
      * @param args the command line arguments
      */
