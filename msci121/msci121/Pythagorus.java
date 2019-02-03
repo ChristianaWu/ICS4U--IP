@@ -1,3 +1,11 @@
+/*
+ * Christiana Wu - 20767703
+ * Feb 3, 2019
+ * Homework 4 - problem 4 
+ * This will calculate the hypotenuse of a triangle 
+ * input 2 side lengths  output the hypotenuse 
+ */
+
 package msci121;
 
 import java.util.Scanner;
