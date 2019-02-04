@@ -7,21 +7,14 @@
  */
 package msci121;
 
-import java.util.Scanner;
-
 public class pattern3 {
 	
-	public static int height; 
+	public static final int HEIGHT = 5; 
 
 	public static void main(String[] args) {
-		//THis allows the user to input a height
-		System.out.print("The hegiht of this the pattern is: ");
-		Scanner input = new Scanner(System.in);
-		height = input.nextInt();
 		
-		printPattern(height);
-		
-		input.close();
+		printPattern(HEIGHT);
+	
 
 	}
 	
