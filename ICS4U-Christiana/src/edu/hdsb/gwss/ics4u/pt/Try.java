@@ -5,6 +5,8 @@
  */
 package edu.hdsb.gwss.ics4u.pt;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Christiana Wu
@@ -15,9 +17,20 @@ public class Try {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       int x; 
-        System.out.println("fjfkdkds: ");
-        x = input.nextInt;
+       Scanner input = new Scanner(System.in);
+       
+       int x = ;
+       int sum;
+        
+        while (x != 0) {
+           sum = sum+x;
+            System.out.print("Enter a number (-1 to quit): ");
+           x = input.nextInt(); 
+           
+        };
+       
     }
-    
+    public int getNumber(Scanner input){
+         return 1;
+     }
 }

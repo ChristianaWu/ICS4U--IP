@@ -28,8 +28,10 @@ public class Pythagorus {
 		System.out.print("Please give the vlause of b: ");
 		b = input.nextDouble();
 		
+		//Math 
 		c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
 		
+		//final line 
 		System.out.println("The hypotenuse has length " + c);
 		
 		input.close();
