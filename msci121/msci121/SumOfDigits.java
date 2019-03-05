@@ -1,3 +1,9 @@
+/*
+ * Christiana Wu 
+ * 20767703 
+ * Tut 5 
+ * Input numb output sum
+ */
 package msci121;
 
 import java.util.Scanner;
@@ -24,8 +30,8 @@ public class SumOfDigits {
 		int sum = 0; 
 		int index = 0, dig;
 				
-		while (index <= numb.length()-1) {
-			dig = Character.getNumericValue(numb.charAt(index));
+		while (index <= numb.length()-1) { // get the digit at index 
+			dig = Character.getNumericValue(numb.charAt(index)); // convrt to char
 			sum = sum + dig; 
 			index++;
 		}
