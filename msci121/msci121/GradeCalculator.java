@@ -27,7 +27,7 @@ public class GradeCalculator {
 		numbGrades = input.nextInt(); // this will help fix a loop 
 		for (int i = 1; i <= numbGrades; i++) {// This will all the grades listed and then add them together
 			grade = input.nextInt();
-			sum = sum + grade;
+			sum += grade;
 		}
 		
 		avg = (double) sum/numbGrades; // find the sum but since both the numbers are ints you just have to cast it 
