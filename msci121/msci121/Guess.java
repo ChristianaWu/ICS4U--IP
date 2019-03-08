@@ -14,14 +14,34 @@ import java.util.Scanner;
 
 public class Guess {
 	public static final int MAX = 100; 
-	public static int MAXGUESS = 0;
-	public static int NUMBGAMES = 0; 
-	public static int SUMGUESS = 0;
 	public static void main(String[] args) {
 		//object 
 		Scanner input = new Scanner (System.in);
+		
+		//Variables 
+		String responce;
+		int numbGames = 1, sumGuesses, maxGuess, newGuess;
+		
 		intro();
-		game(input);
+		sumGuesses = game(input);
+		maxGuess = sumGuesses;
+		
+		System.out.print("Do you want to play again?: ");
+		responce = input.next();
+		
+		while (responce.charAt(0) == 'y'|| responce.charAt(0)== 'Y') {
+			numbGames++;
+			newGuess = game(input); // Check if the game will be replayed 
+			sumGuesses += newGuess;
+			if (newGuess > maxGuess) {
+				maxGuess = newGuess;
+			}
+			System.out.print("Do you want to play again?: ");
+			responce = input.next();
+		}
+		
+		overAll(numbGames, sumGuesses, maxGuess);
+		
 	}
 	
 	public static void intro () {//Instructions for the game
@@ -29,10 +49,10 @@ public class Guess {
 
 	}
 	
-	public static void game (Scanner input) {
+	public static int game (Scanner input) {
 		int guess, numbGuess = 0;
 		int genNumb = (int) (Math.random() * ((100) + 1)) + 1;	//Gen a random number that the user wil guess
-		
+		System.out.println(genNumb);
 		do {
 			System.out.print("Your guess? ");
 			guess = input.nextInt();// Take user guess
@@ -45,29 +65,13 @@ public class Guess {
 		}while (guess != genNumb);
 		
 		System.out.println("You got this right in " + numbGuess + " guesses");
-		
-		String responce;
-		System.out.print("Do you want to play again?: ");
-		responce = input.next();
-		
-		overAll(input, numbGuess, responce);
+		return numbGuess;
 	}
 	
-	public static void overAll (Scanner input, int numbGuess, String responce) {
+	public static void overAll (int numbGames, int sumGuesses, int maxGuess) {
 		double avg;
-		if (numbGuess > MAXGUESS) {
-			MAXGUESS = numbGuess;
-		}
-		SUMGUESS += numbGuess;
-		NUMBGAMES++;
-		
-		if (responce.charAt(0)== 'y' || responce.charAt(0)== 'Y') {
-			game(input); // Check if the game will be replayed 
-			
-		}else if (responce.charAt(0)== 'n' || responce.charAt(0)== 'N'){
-			avg = (double) SUMGUESS/NUMBGAMES; // if not then the print out the gmaes guesses max guess and avg 
-			System.out.println("Total game = " + NUMBGAMES + "\nTotal guesses = " + SUMGUESS + "\nGuesses/Games = " + avg + "\nMax Guesses = " + MAXGUESS);
-		}
+			avg = (double) sumGuesses/numbGames; // if not then the print out the gmaes guesses max guess and avg 
+			System.out.println("Total game = " + numbGames + "\nTotal guesses = " + sumGuesses + "\nGuesses/Games = " + avg + "\nMax Guesses = " + maxGuess);
 	}
 
 }
