@@ -51,7 +51,7 @@ public class Guess {
 	
 	public static int game (Scanner input) {
 		int guess, numbGuess = 0;
-		int genNumb = (int) (Math.random() * ((100) + 1)) + 1;	//Gen a random number that the user wil guess
+		int genNumb = (int) (Math.random() * ((MAX) + 1)) + 1;	//Gen a random number that the user wil guess
 		System.out.println(genNumb);
 		do {
 			System.out.print("Your guess? ");
