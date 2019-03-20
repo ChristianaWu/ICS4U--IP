@@ -1,3 +1,12 @@
+/*
+ * Christiana Wu 
+ * 20767703 
+ * Assignment 7 Problem 2 
+ * Input Name Output the ranks in each decade and graph 
+ * Reads a file of names and the popularity in that decade. Ask the user to see for a name to chack
+ * if it is in the file and then it would print if it was use or not if it was what was the ranking in that year 
+ * then it would draw a graph out for that name 
+ */
 package msci121;
 
 import java.io.File;
@@ -15,38 +24,25 @@ public class BabyNames extends PApplet {
 		PApplet.main("msci121.BabyNames");
 	}
 	
-	public void settings() throws FileNotFoundException {
+	public void settings() {
 		size(550,560);
-		String name;
-		Scanner input = new Scanner (System.in);
-		System.out.print("Type a name: ");
-		name = input.nextLine();
-		findName (name);
+		//findName (name);
 	}
 	
-	public void setup() {
-		background(255);
-		stroke (204);
-		for (int i = 30; i<=530; i+=WIDTH) {
-			line (0, i, 560, i);
-			line (i, 0, i, 550);
-		}
-		fill(255,255,0);
-		rect (0,0,550,30);
-		rect (0, 530,550,30);
-	}
-	
-	public void findName(String name ) throws FileNotFoundException {
-		String fileName = null;
-		Scanner file = new Scanner (new File (FILE));
-		while (file.hasNextLine()) {
-			fileName = file.next();
-			if (name.equalsIgnoreCase(fileName)) {
+	public void findName(String name) throws FileNotFoundException {
+		String fileName = null, token;
+		Scanner file = new Scanner (new File (FILE)); // Scanner object scanning the file 
+		while (file.hasNextLine()) { // This is scanning the file line by line 
+			fileName = file.next(); // getting the first token 
+			if (name.equalsIgnoreCase(fileName)) { // Checking if the name is in the file 
 				System.out.println("Populatrity ranking of name: \"" + name + "\"");
 				int x = 0;
 				for (int i = 0; i<=DECADES-1; i++) {
-					System.out.println(STARTYEAR+i*10 + " : " + file.next());
-					text ()
+					token = file.next();
+					System.out.println(STARTYEAR+i*10 + " : " + token);
+					textYear(STARTYEAR+i*10, x, name);
+					bars (STARTYEAR+i*10, x, token);
+					x+= WIDTH;
 				}
 				break;
 			}
@@ -57,14 +53,45 @@ public class BabyNames extends PApplet {
 		
 	}
 	
-	public void text (int year, String numb) {
-		int x = 0, y = 540;
-		text (year, x, y);
-		x+= 50;
+	public void setup() throws FileNotFoundException {
+		String name;
+		Scanner input = new Scanner (System.in);
+		System.out.print("Type a name: ");
+		name = input.nextLine();
+		
+		background(255);
+		stroke (204);
+		for (int i = 0; i<=530; i+=WIDTH) {
+			line (0, i+30, width, i+30); //horizontal
+			line (i, 0, i, height);// vertical
+		}
+		fill(255,255,0);
+		rect (0,0,height,30);
+		rect (0, 530,height,30);
+		findName (name);
 	}
 	
-	public void bars () {
-		
+	public void textYear(int year, int x, String name) {
+		int y = 546;
+		String title = "Ranking of name " + name;
+		fill(0);
+		text (Integer.toString(year), x, y);
+		text (title, 0, 14);
+	}
+	
+	public void bars (int year, int x, String token) {
+		int y, recHeight;
+		if (Integer.parseInt(token) == 0) {
+			y= height -30;
+			recHeight = 0;
+		}else {
+			y= 30 +Integer.parseInt(token)/2;
+			recHeight = (height - 60) - Integer.parseInt(token)/2;
+		}
+		fill(255,0,0);
+		rect(x, y, 30, recHeight);
+		fill (0);
+		text (token, x, y);
 	}
 	
 }
