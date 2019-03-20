@@ -3,9 +3,13 @@ import java.util.Scanner;
 
 public class test { 
 	public static void main( String[] args ) { 
-		int x= NumbHeads(5);
-		
-		System.out.println(x);
+		//int x= NumbHeads(5);
+		String s = "EiE";
+		char chr =s.charAt(0);
+		if (chr != 'E')
+			System.out.println("Nothing");
+		else 
+			System.out.println("yes");
 	}
 	
 	public static void pattern (int numbRows) {
