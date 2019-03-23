@@ -61,18 +61,18 @@ public class BabyNames extends PApplet {
 		
 		background(255);
 		stroke (204);
-		for (int i = 0; i<=530; i+=WIDTH) {
+		for (int i = 0; i<=height-30; i+=WIDTH) {
 			line (0, i+30, width, i+30); //horizontal
 			line (i, 0, i, height);// vertical
 		}
 		fill(255,255,0);
 		rect (0,0,height,30);
-		rect (0, 530,height,30);
+		rect (0, height-30,height,30);
 		findName (name);
 	}
 	
 	public void textYear(int year, int x, String name) {
-		int y = 546;
+		int y = height-14;
 		String title = "Ranking of name " + name;
 		fill(0);
 		text (Integer.toString(year), x, y);
@@ -82,7 +82,7 @@ public class BabyNames extends PApplet {
 	public void bars (int year, int x, String token) {
 		int y, recHeight;
 		if (Integer.parseInt(token) == 0) {
-			y= height -30;
+			y= height-30;
 			recHeight = 0;
 		}else {
 			y= 30 +Integer.parseInt(token)/2;
