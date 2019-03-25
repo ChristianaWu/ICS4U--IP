@@ -14,9 +14,9 @@ public class Point {
 	public int getY() {
 		return y;
 	}
-	public double getSlope (Point other) {
-		int x2 = other.getX();
-		int y2 = other.getY();
+	public double getSlope (Point other) throws IllegalArgumentException{
+		double x2 = other.getX();
+		double y2 = other.getY();
 		double m;
 		m = (y2 - this.y)/(x2 - this.x);
 		return m;
