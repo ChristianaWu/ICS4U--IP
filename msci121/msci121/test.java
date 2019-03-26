@@ -1,15 +1,23 @@
 package msci121;
+import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.Scanner;
 
 public class test { 
 	public static void main( String[] args ) { 
 		//int x= NumbHeads(5);
-		String s = "EiE";
+		/*String s = "EiE";
 		char chr =s.charAt(0);
 		if (chr != 'E')
 			System.out.println("Nothing");
 		else 
 			System.out.println("yes");
+		*/
+		int[] list = {2,18,6,-4,5,1};
+		for (int i = 0; i < list.length; i++) {
+			list[i] = list[i] + (list[i]/ list[0]);
+		}
+		System.out.println(Arrays.toString(list));
 	}
 	
 	public static void pattern (int numbRows) {
