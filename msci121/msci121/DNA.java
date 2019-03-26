@@ -10,6 +10,7 @@ public class DNA {
 	public static final double PERCENT = 30;
 	public static final int UNIQUE = 4;
 	public static final int SIZECODON = 3;
+	public static final double[] MASSES = {135.128, 111.103, 151.128, 125.107};
 	
 	public static void main (String arg[]) throws FileNotFoundException {
 		Scanner input = new Scanner (new File("dna.txt"));
@@ -21,12 +22,17 @@ public class DNA {
 		int nucLength;
 		while (input.hasNext()) {
 			System.out.println("Region Name: " + input.nextLine());
+			
 			nuc = input.nextLine().toUpperCase();
+			
 			int [] amount = count(nuc);
+			
 			nucLength = nuc.length();
-			double[] mass = mass(nucLength, amount);
+			
 			System.out.println("Nucleoides: " + nuc);
 			System.out.println("Nuc. Counts: " + Arrays.toString(amount));
+			System.out.println("Total Mass%: " + Arrays.toString(mass(nucLength, amount)));
+			System.out.println("Codon: " + Arrays.toString(codons(nuc)));
 			
 		}
 	}
@@ -61,15 +67,36 @@ public class DNA {
 		 * t = element 3
 		 */
 		double totMass=0, totNuc = 0, junkNumb;
-		double[] masses = {135.128, 111.103, 151.128, 125.107, 100.000};
 		double [] massPerc = new double[UNIQUE];
+		double num;
 		
-		for (int i = 0; i<=counts.length; i++) {
-			
+		for (int i = 0; i<=counts.length-1; i++) {
+			massPerc[i] = MASSES[i] * counts[i];
+			totNuc += counts[i];
+			totMass += massPerc[i];
 		}
-
+		junkNumb = length - totNuc;
+		totMass += (junkNumb*100.000);
 		
-		return masses;
+		for (int i = 0; i< massPerc.length; i++) {
+			num = massPerc[i]/totMass * 100;
+			massPerc[i] = Math.round(num * 10.0)/10.0;
+		}
+		
+		return massPerc;
+	}
+	
+	public static String[] codons (String nuc) {
+		String newSr =  nuc.replace("-", "");
+		String[] codons = new String [newSr.length()/SIZECODON];
+		//System.out.println(newSr.length());
+		int i = 0;
+		while (i < codons.length) {
+		    codons[i] = newSr.substring(i*SIZECODON, (i+1)*SIZECODON);
+		    i ++;
+		}
+		
+		return codons;
 	}
 
 }
