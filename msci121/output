@@ -1,0 +1,70 @@
+Region Name: cure for cancer protein
+Nucleoides: ATGCCACTATGGTAG
+Nuc. Counts: [4, 3, 4, 4]
+Total Mass%: [27.3, 16.8, 30.6, 25.3] of 1978.8
+Codon: [ATG, CCA, CTA, TGG, TAG]
+Is Protein?: Yes
+
+Region Name: captain picard hair growth protein
+Nucleoides: ATGCCAACATGGATGCCCGATATGGATTGA
+Nuc. Counts: [9, 6, 8, 7]
+Total Mass%: [30.7, 16.8, 30.5, 22.1] of 3967.5
+Codon: [ATG, CCA, ACA, TGG, ATG, CCC, GAT, ATG, GAT, TGA]
+Is Protein?: Yes
+
+Region Name: bogus protein
+Nucleoides: CCATT-AATGATCA-CAGTT
+Nuc. Counts: [6, 4, 2, 6]
+Total Mass%: [32.3, 17.7, 12.1, 29.9] of 2508.1
+Codon: [CCA, TTA, ATG, ATC, ACA, GTT]
+Is Protein?: No
+
+Region Name: michael jordan mad hops protein
+Nucleoides: ATGAG-ATC-CGTGATGTGGG-AT-CCTA-CT-CATTAA
+Nuc. Counts: [9, 6, 8, 10]
+Total Mass%: [24.6, 13.5, 24.5, 25.3] of 4942.9
+Codon: [ATG, AGA, TCC, GTG, ATG, TGG, GAT, CCT, ACT, CAT, TAA]
+Is Protein?: Yes
+
+Region Name: paris hilton phony protein
+Nucleoides: ATGC-CAACATGGATGCCCTAAG-ATATGGATTAGTGA
+Nuc. Counts: [12, 6, 9, 9]
+Total Mass%: [32.6, 13.4, 27.3, 22.6] of 4974.3
+Codon: [ATG, CCA, ACA, TGG, ATG, CCC, TAA, GAT, ATG, GAT, TAG, TGA]
+Is Protein?: Yes
+
+Region Name: jimi hendrix guitar talent protein
+Nucleoides: ATGATAATTAGTTTTAATATCAGA-CTGTAA
+Nuc. Counts: [12, 2, 4, 12]
+Total Mass%: [40.0, 5.5, 14.9, 37.1] of 4049.5
+Codon: [ATG, ATA, ATT, AGT, TTT, AAT, ATC, AGA, CTG, TAA]
+Is Protein?: No
+
+Region Name: admiral grace murray hopper protein
+Nucleoides: ATGC-AATT--GC-----TCGA--------TTAG
+Nuc. Counts: [5, 3, 4, 6]
+Total Mass%: [17.0, 8.4, 15.2, 18.9] of 3964.1
+Codon: [ATG, CAA, TTG, CTC, GAT, TAG]
+Is Protein?: No
+
+Region Name: tyler durden's brain protein
+Nucleoides: ATGATACCTATGAGTAATGTGGACCATATCCAAACTATAGGCATTGTCGGACCAACGATCGATTGGTTATACTGA
+Nuc. Counts: [24, 14, 16, 21]
+Total Mass%: [32.9, 15.8, 24.6, 26.7] of 9843.8
+Codon: [ATG, ATA, CCT, ATG, AGT, AAT, GTG, GAC, CAT, ATC, CAA, ACT, ATA, GGC, ATT, GTC, GGA, CCA, ACG, ATC, GAT, TGG, TTA, TAC, TGA]
+Is Protein?: Yes
+
+Region Name: mini me growth hormone
+Nucleoides: ATGGGACGCTGA
+Nuc. Counts: [3, 2, 5, 2]
+Total Mass%: [24.8, 13.6, 46.3, 15.3] of 1633.4
+Codon: [ATG, GGA, CGC, TGA]
+Is Protein?: No
+
+Region Name: Nyan Cat protein
+Nucleoides: CAT-CAT-CAT-CAT-CAT-CAT-CAT-CAT-CAT-CAT
+Nuc. Counts: [10, 10, 0, 10]
+Total Mass%: [29.3, 24.1, 0.0, 27.1] of 4613.4
+Codon: [CAT, CAT, CAT, CAT, CAT, CAT, CAT, CAT, CAT, CAT]
+Is Protein?: No
+
