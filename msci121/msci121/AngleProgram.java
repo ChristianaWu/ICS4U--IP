@@ -11,7 +11,7 @@ package msci121;
 public class AngleProgram {
 
 	public static void main(String[] args) {
-		System.out.println(anglePairs (0, 91, 180));
+		System.out.println(anglePairs (0, 90, 180));
 
 	}
 	public static boolean anglePairs (int x, int y, int z){

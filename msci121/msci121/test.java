@@ -15,7 +15,10 @@ public class test {
 		*/
 		int[] list = {2,18,6,-4,5,1};
 		for (int i = 0; i < list.length; i++) {
-			list[i] = list[i] + (list[i]/ list[0]);
+			System.out.println(list[i] + " , " + list[0]);
+			int x = (list[i]/ list[0]);
+			System.out.println(x);
+			list[i] = list[i] + x;
 		}
 		System.out.println(Arrays.toString(list));
 	}

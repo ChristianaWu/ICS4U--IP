@@ -1,3 +1,13 @@
+/*
+ * Christiana Wu
+ * 20767703
+ * Assignment 8 problem 3
+ * 03,27,2019
+ * Input the input and output files, for reading and writing to 
+ * Output the region, DNA, codons, count of nucleotides, mass%, total mass and if it is a protein on the output file
+ * This program will read the input  text file and and read it line by line
+ * it will use different methods to get hte information and output it 
+ */
 package msci121;
 
 import java.io.File;
@@ -22,14 +32,14 @@ public class DNA {
 		System.out.print("Output File Name: ");
 		outFile = input.nextLine();
 		
-		PrintStream file = new PrintStream (new File (outFile));
+		PrintStream file = new PrintStream (new File (outFile)); //creating a file if it does not exsit if it does then over
 		Scanner fileIn = new Scanner (new File(inFile));
 		print(fileIn, file);
 	}
 	
 	public static void print (Scanner input, PrintStream file) throws FileNotFoundException {		
 		String nuc;
-		while (input.hasNext()) {// check if there are still lines to read 
+		while (input.hasNextLine()) {// check if there are still lines to read 
 			file.println("Region Name: " + input.nextLine()); //Reading the region 
 			
 			nuc = input.nextLine().toUpperCase(); //Making the DNA cap
@@ -129,15 +139,15 @@ public class DNA {
 			sum += counts[i];
 		}
 		
-		cdPerc = (counts[1]+counts[2])/sum * 100.0;
-		
+		cdPerc = (counts[1]+counts[2])/sum * 100.0;	
 		
 		//Doing the check 
-		if (cdPerc >= PERCENT && codons.length >= MIN && codons[0].equalsIgnoreCase("ATG") && (codons[codons.length-1].equalsIgnoreCase("TAA") || codons[codons.length-1].equalsIgnoreCase("TAG")|| codons[codons.length-1].equalsIgnoreCase("TGA"))) {
+		/*if (cdPerc >= PERCENT && codons.length >= MIN && codons[0].equalsIgnoreCase("ATG") && (codons[codons.length-1].equalsIgnoreCase("TAA") || codons[codons.length-1].equalsIgnoreCase("TAG")|| codons[codons.length-1].equalsIgnoreCase("TGA"))) {
 			return true;
-		}
+		}*/
+		//boolean isProtein = (cdPerc >= PERCENT && codons.length >= MIN && codons[0].equalsIgnoreCase("ATG") && (codons[codons.length-1].equalsIgnoreCase("TAA") || codons[codons.length-1].equalsIgnoreCase("TAG")|| codons[codons.length-1].equalsIgnoreCase("TGA"))) ;
 		
-		return false;
+		return (cdPerc >= PERCENT && codons.length >= MIN && codons[0].equalsIgnoreCase("ATG") && (codons[codons.length-1].equalsIgnoreCase("TAA") || codons[codons.length-1].equalsIgnoreCase("TAG")|| codons[codons.length-1].equalsIgnoreCase("TGA"))) ;
 		
 	}
 

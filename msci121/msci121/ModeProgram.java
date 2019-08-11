@@ -1,3 +1,12 @@
+/*
+ * Christiana Wu
+ * 20767703 
+ * 03,27,2019
+ * Assignemnt 8 problem 2
+ * Input length of the array and then numbers to be put n the array 
+ * Output the mode of the array 
+ * Finding the mode in an array using tallying 
+ */
 package msci121;
 
 import java.util.Arrays;
