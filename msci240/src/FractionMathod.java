@@ -1,9 +1,4 @@
-package msci240;
-/*
- * Christiana Wu
- * 2019-09-06
- * Msci 240
- */
+
 
 
 import msci240.Fraction;
