@@ -1,8 +1,5 @@
 
 
-
-import msci240.Fraction;
-
 public class FractionMathod {
 	
 	public static Fraction add (Fraction a, Fraction b) {
