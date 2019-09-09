@@ -7,6 +7,8 @@ public class FractionMathod {
 		
 		if (a.denominator == b.denominator) {
 			c.numerator = a.numerator + b.numerator;
+			c.denominator = a.denominator;
+			
 		}else {
 			c.denominator = (a.denominator * b.denominator);
 			c.numerator = (a.numerator * b.denominator) + (a.denominator * b.numerator);
@@ -16,7 +18,7 @@ public class FractionMathod {
 	}
 
 	public static double asDouble(Fraction a) {
-		double x = a.numerator / a.denominator;
+		double x = (double) a.numerator / a.denominator;
 		
 		return x;
 	}
