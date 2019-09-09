@@ -18,9 +18,7 @@ public class FractionMathod {
 	}
 
 	public static double asDouble(Fraction a) {
-		double x = (double) a.numerator / a.denominator;
-		
-		return x;
+		return (double) a.numerator / a.denominator;
 	}
 }
 
