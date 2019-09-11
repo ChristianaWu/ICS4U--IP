@@ -3,8 +3,8 @@
 import java.util.Scanner;
 
 public class BillCalculator {
-	String name;
-	double cost;
+	String name = null;
+	double cost = 0.0;
 
 	public static void printHighestCost(Scanner input) {
 		int numbPeople = input.nextInt();
@@ -18,7 +18,7 @@ public class BillCalculator {
 			ar[i].cost = input.nextDouble();	
 		}
 		for (int i = 0; i < ar.length - 1; i++) {
-			if (ar[i].cost > high) {
+			if (ar[i].cost > high) {	
 				high = ar[i].cost;
 				highName = ar[i].name;
 			}
