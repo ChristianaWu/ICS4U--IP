@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class BillCalcualtor {
+public class BillCalculator {
 	String name;
 	double cost;
 
@@ -11,7 +11,7 @@ public class BillCalcualtor {
 		double high = 0;
 		String highName = null;
 		
-		BillCalcualtor[] ar = new BillCalcualtor[numbPeople];
+		BillCalculator[] ar = new BillCalculator[numbPeople];
 		for (int i = 0; i < ar.length - 1; i++) {
 			ar[i].name = input.next();
 			ar[i].cost = input.nextDouble();	

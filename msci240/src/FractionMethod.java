@@ -1,6 +1,6 @@
 
 
-public class FractionMathod {
+public class FractionMethod {
 	
 	public static Fraction add (Fraction a, Fraction b) {
 		Fraction c = new Fraction();
