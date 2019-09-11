@@ -5,8 +5,8 @@ public class FractionMethods {
 	public static Fraction add (Fraction a, Fraction b) {
 		Fraction c = new Fraction();
 		
-		if (a.denominator == b.denominator) {
-			c.numerator = a.numerator + b.numerator;
+		if (a.getDenominator == b.getDenominator) {
+			c.numerator = a.getNumerator + b.getNumerator;
 			c.denominator = a.denominator;
 			
 		}else {
