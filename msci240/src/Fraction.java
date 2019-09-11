@@ -1,7 +1,7 @@
 
 
 public class Fraction {
-    private int numerator;
+	private int numerator;
     private int denominator;
    
     public Fraction () {
@@ -14,7 +14,7 @@ public class Fraction {
     	this.numerator = numerator;
     }
     
-    public double asDouble() {
+    public double asDouble() throws IllegalArgumentException{
     	return (double) this.numerator/this.denominator;
     }
     
@@ -28,8 +28,8 @@ public class Fraction {
     
     public void simplify() {
     	int gcd = MathUtilities.gcd(this.numerator, this.denominator);
-    	this.numerator = this.numerator % gcd;
-    	this.denominator = this.denominator % gcd;
+    	this.numerator = this.numerator / gcd;
+    	this.denominator = this.denominator / gcd;
     }
 }
 
