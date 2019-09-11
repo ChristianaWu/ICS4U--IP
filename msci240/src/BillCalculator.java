@@ -13,6 +13,7 @@ public class BillCalculator {
 		
 		BillCalculator[] ar = new BillCalculator[numbPeople];
 		for (int i = 0; i < ar.length - 1; i++) {
+			ar[i] = new BillCalculator();
 			ar[i].name = input.next();
 			ar[i].cost = input.nextDouble();	
 		}
