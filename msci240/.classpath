@@ -4,6 +4,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="C:/Users/Christiana Wu/Downloads/teachergcd.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Christiana Wu/Downloads/teacherrect.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Christiana Wu/Downloads/teacherscore.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
