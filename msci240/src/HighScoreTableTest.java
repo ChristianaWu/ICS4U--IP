@@ -5,11 +5,31 @@ import junit.framework.TestCase;
 public class HighScoreTableTest extends TestCase {
 
     public void testHighScoreTable() {
-        fail("Not yet implemented");
+       HighScoreTable x = new HighScoreTable (); 
+       
+       assertEquals (10,x.getCapacity());
     }
 
     public void testHighScoreTableInt() {
-        fail("Not yet implemented");
+    	HighScoreTable x = new HighScoreTable (5); 
+        
+        assertEquals (5,x.getCapacity());
+    }
+    
+    public void testHighScoreTableIntZero() {
+        HighScoreTable x = new HighScoreTable (0); 
+        
+        assertEquals (0,x.getCapacity());
+    }
+ 
+    public void testHighScoreTableNegativeCapacity() {
+        HighScoreTable x = new HighScoreTable (-7); 
+        
+        try {
+        	assertEquals (-7,x.getCapacity());
+        	fail("should not reach this point");
+        }catch (IllegalArgumentException e) { 	
+        }
     }
 
     public void testSize() {
@@ -17,7 +37,9 @@ public class HighScoreTableTest extends TestCase {
     }
 
     public void testGetCapacity() {
-        fail("Not yet implemented");
+    	HighScoreTable x = new HighScoreTable (7); 
+
+        assertEquals (7,x.getCapacity());
     }
 
     public void testAdd() {

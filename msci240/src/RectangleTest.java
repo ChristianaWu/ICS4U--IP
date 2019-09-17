@@ -31,7 +31,7 @@ public class RectangleTest extends TestCase {
 		
 		try {
 			Rectangle r3 = new Rectangle (2,3,4,-5);
-			//When width is a negative 
+			//When height is a negative 
 			assertEquals (2,r3.getX());
 			assertEquals (3,r3.getY());
 			assertEquals (-5,r3.getHeight());
@@ -42,12 +42,12 @@ public class RectangleTest extends TestCase {
 		
 		Rectangle r4 = new Rectangle(-2,3,4,5);
 		
-		//When x is negatie
+		//When x is negative
 		assertEquals (-2,r4.getX());
 		assertEquals (3,r4.getY());
 		assertEquals (4,r4.getWidth());
 		assertEquals (5,r4.getHeight());
-		
+			
 	}
 
 	public void testContains() {
@@ -68,11 +68,71 @@ public class RectangleTest extends TestCase {
 	}
 
 	public void testUnion() {
-		fail("Not yet implemented");
+		Rectangle r = new Rectangle (0,0,4,4);
+		Rectangle r2 = new Rectangle (2,2,4,4);
+		
+		Rectangle r3 = r.union(r2);
+		assertEquals (0,r3.getX());
+		assertEquals (0,r3.getY());
+		assertEquals (6,r3.getHeight());
+		assertEquals (6,r3.getWidth());
+		
+		//Rectnagle r4 = new Rectangle (0,)
 	}
 
 	public void testIntersection() {
-		fail("Not yet implemented");
+		Rectangle r = new Rectangle(2,3,4,5);
+		Rectangle r2 = new Rectangle (4,5,6,7);
+		//Rectangle r3 = new Rectangle (4,5,2,3);
+		
+		//should work
+		Rectangle r3 = r.intersection(r2);
+		assertEquals (4, r3.getX());
+		assertEquals (5, r3.getY());
+		assertEquals (3, r3.getHeight());
+		assertEquals (2, r3.getWidth());
+		
+		Rectangle r6 = new Rectangle (-4,5,6,7);
+		
+		//just intersects
+		r3 = r.intersection(r6);
+		assertEquals (2, r3.getX());
+		assertEquals (5, r3.getY());
+		assertEquals (3, r3.getHeight());
+		assertEquals (0, r3.getWidth());
+		
+		Rectangle r7 = new Rectangle (-10,-5,2,5);
+		
+		//when it does not intersect
+		assertEquals (null,r.intersection(r7));
+		
+		//when one of the widths or lengths for the rectangle is negative
+		try {
+			Rectangle r4 = new Rectangle (4,5,6,-7);
+			
+			r3 = r.intersection(r4);
+			assertEquals (4, r3.getX());
+			assertEquals (5, r3.getY());
+			assertEquals (3, r3.getHeight());
+			assertEquals (2, r3.getWidth());
+			fail ("This should not reach this point");
+		}catch (IllegalArgumentException e) {
+			
+		}
+		
+		try {
+			Rectangle r5 = new Rectangle (4,5,-6,7);
+			
+			r3 = r.intersection(r5);
+			assertEquals (4, r3.getX());
+			assertEquals (5, r3.getY());
+			assertEquals (3, r3.getHeight());
+			assertEquals (2, r3.getWidth());
+			fail ("This should not reach this point");
+		}catch (IllegalArgumentException e) {
+			
+		}
+		
 	}
 
 }
