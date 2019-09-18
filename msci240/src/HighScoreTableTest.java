@@ -26,13 +26,10 @@ public class HighScoreTableTest extends TestCase {
         assertEquals (0,x.getCapacity());
     }
  
-    public void testHighScoreTableNegativeCapacity() {
-    	 HighScoreTable x = new HighScoreTable (-7); 
-        
+    public void testHighScoreTableNegativeCapacity() {        
         try {
-        	assertEquals (-7,x.getCapacity());
-        	fail("should not reach this point");
-        }catch (IllegalArgumentException e) { 	
+        	HighScoreTable x = new HighScoreTable (-7);
+        }catch (NegativeArraySizeException e) { 	
         }
     }
     
@@ -60,11 +57,11 @@ public class HighScoreTableTest extends TestCase {
     }
     
     public void testGetCapacityNegative() {
-    	HighScoreTable x = new HighScoreTable (-7); 
-    	
     	try {
+    		HighScoreTable x = new HighScoreTable (-7);
     		assertEquals (7,x.getCapacity());
-    	}catch (IllegalArgumentException e) { 
+    		fail("Should not reach here");
+    	}catch (NegativeArraySizeException e) { 
     	}
     }
 
@@ -153,9 +150,9 @@ public class HighScoreTableTest extends TestCase {
     	x.add("dfdfdfdfs", 264);
     	x.add("dfwewedfs", 204);
     	
-    	assertEquals ("dfdfs", x.getName(0));
-    	assertEquals ("dfdfs", x.getName(1));
-    	assertEquals ("dfdfs", x.getName(3));
+    	assertEquals ("dfdfdfdfs", x.getName(0));
+    	assertEquals ("dfdeeefs", x.getName(1));
+    	assertEquals ("dfdddfs ", x.getName(3));
     }
     
     public void testGetNameEmpty() {
@@ -191,9 +188,9 @@ public class HighScoreTableTest extends TestCase {
     	x.add("dfdfdfdfs", 264);
     	x.add("dfwewedfs", 204);
     	
-    	assertEquals (234, x.getScore(0));
-    	assertEquals (224, x.getName(1));
-    	assertEquals (264, x.getName(3));
+    	assertEquals (264, x.getScore(0));
+    	assertEquals (244, x.getScore(1));
+    	assertEquals (224, x.getScore(3));
     }
     
     public void testGetScoreEmpty() {
@@ -224,22 +221,27 @@ public class HighScoreTableTest extends TestCase {
     public void testWrite() throws FileNotFoundException {
         File file = new File ("High Score.txt");
         HighScoreTable x = new HighScoreTable ();
-        x.add("dfdfs", 234);
-    	x.add("dfdddfs", 224);
-    	x.add("dfdeeefs", 244);
-    	x.add("dfdfdfdfs", 264);
-    	x.add("dfwewedfs", 204);
+        x.add("as", 234);
+    	x.add("ase", 224);
+    	x.add("asd", 244);
+    	x.add("asdf", 264);
+    	x.add("asef", 204);
     	
     	x.write(file);
-    	
-        
     }
 
     public void testPrint() {
         fail("Not yet implemented");
     }
 
-    public void testRead() {
-        fail("Not yet implemented");
+    public void testRead() throws FileNotFoundException {
+    	File file = new File ("High Score.txt");
+     	HighScoreTable x2 = HighScoreTable.read(file);
+     	
+     	assertEquals (10, x2.getCapacity());
+     	assertEquals (5,x2.size());
+     	assertEquals (264, x2.getScore(0));
+     	assertEquals ("asdf", x2.getName(0));
+     	
     }
 }
