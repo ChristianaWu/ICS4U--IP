@@ -31,5 +31,13 @@ public class Fraction {
     	this.numerator = this.numerator / gcd;
     	this.denominator = this.denominator / gcd;
     }
+    
+    public Fraction multiply (Fraction f) {
+    	Fraction f2 = new Fraction ();
+    	f2.denominator = this.denominator * f.getDenominator();
+    	f2.numerator = this.numerator * f.getNumerator();
+    	
+    	return f2;
+    }
 }
 
