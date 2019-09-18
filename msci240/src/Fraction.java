@@ -1,4 +1,5 @@
-
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class Fraction {
 	private int numerator;
@@ -39,5 +40,33 @@ public class Fraction {
     	
     	return f2;
     }
+    
+    public static Fraction parseFraction (String str) {
+    	Fraction f = new Fraction ();
+    	
+    	String split[] = str.split("\\s*/ \\s*");
+    	System.out.println(Arrays.toString(split));
+    	int length = split.length;
+    	//split[1] = split[1].replace("\\s*", "");
+    	
+    	//try {
+    		if(length == 1) {
+    			throw new NumberFormatException();
+    		}else if (split[1].contains("0")) {
+    			throw new IllegalArgumentException();
+    		}else {
+    			f.numerator = Integer.parseInt(split[0]);
+    			f.denominator = Integer.parseInt(split[1]);
+
+    		//}catch (Exception e) {
+    		
+    	}
+    	
+    	//System.out.println(f.numerator + " " +  f.denominator);
+    	
+    	return f;
+    }
+
+
 }
 

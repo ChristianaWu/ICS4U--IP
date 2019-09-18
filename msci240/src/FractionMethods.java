@@ -1,8 +1,11 @@
 
 
 public class FractionMethods {
-	
-	public static Fraction add (Fraction a, Fraction b) {
+	public static void main(String[] args) {
+		Fraction.parseFraction("2  /  0");
+	}
+	/*
+	 * public static Fraction add (Fraction a, Fraction b) 
 		Fraction c = new Fraction();
 		
 		if (a.getDenominator == b.getDenominator) {
@@ -20,6 +23,9 @@ public class FractionMethods {
 	public static double asDouble(Fraction a) {
 		return (double) a.numerator / a.denominator;
 	}
+	*/
+	
+	
 }
 
 

@@ -1,6 +1,7 @@
 
 
 import java.io.File;
+import java.io.FileNotFoundException;
 
 import junit.framework.TestCase;
 
@@ -220,7 +221,7 @@ public class HighScoreTableTest extends TestCase {
     	}
     }
 
-    public void testWrite() {
+    public void testWrite() throws FileNotFoundException {
         File file = new File ("High Score.txt");
         HighScoreTable x = new HighScoreTable ();
         x.add("dfdfs", 234);
@@ -231,8 +232,6 @@ public class HighScoreTableTest extends TestCase {
     	
     	x.write(file);
     	
-    	
-        
         
     }
 
