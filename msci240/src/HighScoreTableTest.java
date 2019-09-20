@@ -189,8 +189,7 @@ public class HighScoreTableTest extends TestCase {
     //get name from empty array
     public void testGetNameEmpty() {
     	HighScoreTable x = new HighScoreTable (7); 
-    	
-    	assertEquals (null, x.getName(0));
+    	assertNull (x.getName(0));
     }
     
     //Get an array out of bounds
@@ -225,7 +224,7 @@ public class HighScoreTableTest extends TestCase {
     //Get a score from empty index
     public void testGetScoreEmpty() {
     	HighScoreTable x = new HighScoreTable (7); 
-    	assertEquals (null, x.getName(0));
+    	assertNull (x.getName(0));
     }
     
     //get score negative
@@ -254,10 +253,6 @@ public class HighScoreTableTest extends TestCase {
     	x.add("asef", 204);
    
     	x.write(file);
-    }
-
-    public void testPrint() {
-        fail("Not yet implemented");
     }
     
     //This check the writing to see if it is right
