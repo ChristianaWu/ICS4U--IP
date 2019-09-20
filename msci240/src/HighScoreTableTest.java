@@ -264,6 +264,5 @@ public class HighScoreTableTest extends TestCase {
      	assertEquals (5,x2.size());
      	assertEquals (264, x2.getScore(0));
      	assertEquals ("asdf", x2.getName(0));
-     	
     }
 }
