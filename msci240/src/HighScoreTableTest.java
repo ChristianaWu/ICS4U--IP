@@ -1,12 +1,15 @@
 /*
  * Christiana Wu
  * 20767703
+ * Project 1 part a
  * Testing for the HighScoreTable class
+ * No input no output
  * September 18, 2019
  */
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 
 import junit.framework.TestCase;
 
@@ -189,7 +192,10 @@ public class HighScoreTableTest extends TestCase {
     //get name from empty array
     public void testGetNameEmpty() {
     	HighScoreTable x = new HighScoreTable (7); 
-    	assertNull (x.getName(0));
+    	try {	
+    		assertNull (x.getName(0));
+    	}catch(NullPointerException e) {
+    	}
     }
     
     //Get an array out of bounds
@@ -224,7 +230,10 @@ public class HighScoreTableTest extends TestCase {
     //Get a score from empty index
     public void testGetScoreEmpty() {
     	HighScoreTable x = new HighScoreTable (7); 
-    	assertNull (x.getName(0));
+    	try {
+    		assertNull (x.getName(0));
+    	}catch(NullPointerException e) {
+    	}
     }
     
     //get score negative
@@ -264,5 +273,15 @@ public class HighScoreTableTest extends TestCase {
      	assertEquals (5,x2.size());
      	assertEquals (264, x2.getScore(0));
      	assertEquals ("asdf", x2.getName(0));
+    }
+    
+    public void testReadEmpty() throws FileNotFoundException {
+    	File file = new File ("High Score.txt");
+     	HighScoreTable x2 = HighScoreTable.read(file);
+     
+     	assertEquals (0, x2.getCapacity());
+     	assertEquals (0,x2.size());
+     	//assertEquals (, x2.getScore(0));
+     	//assertEquals ("asdf", x2.getName(0));
     }
 }
