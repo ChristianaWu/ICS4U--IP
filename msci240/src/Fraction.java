@@ -47,10 +47,8 @@ public class Fraction {
     	String split[] = str.split("\\s*/ \\s*");
     	System.out.println(Arrays.toString(split));
     	int length = split.length;
-    	//split[1] = split[1].replace("\\s*", "");
-    	
-    	//try {
-    		if(length == 1) {
+
+    	   		if(length == 1) {
     			throw new NumberFormatException();
     		}else if (split[1].contains("0")) {
     			throw new IllegalArgumentException();
@@ -58,7 +56,6 @@ public class Fraction {
     			f.numerator = Integer.parseInt(split[0]);
     			f.denominator = Integer.parseInt(split[1]);
 
-    		//}catch (Exception e) {
     		
     	}
     	

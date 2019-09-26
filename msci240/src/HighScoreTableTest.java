@@ -194,6 +194,7 @@ public class HighScoreTableTest extends TestCase {
     	HighScoreTable x = new HighScoreTable (7); 
     	try {	
     		assertNull (x.getName(0));
+    		fail ("This should not reach this point");
     	}catch(NullPointerException e) {
     	}
     }
@@ -265,7 +266,7 @@ public class HighScoreTableTest extends TestCase {
     }
     
     //This check the writing to see if it is right
-    public void testRead() throws FileNotFoundException {
+   /* public void testRead() throws FileNotFoundException {
     	File file = new File ("High Score.txt");
      	HighScoreTable x2 = HighScoreTable.read(file);
      	
@@ -284,4 +285,5 @@ public class HighScoreTableTest extends TestCase {
      	//assertEquals (, x2.getScore(0));
      	//assertEquals ("asdf", x2.getName(0));
     }
+    */
 }

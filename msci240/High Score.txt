@@ -1,7 +1,2 @@
 10
-5
-asdf,264
-asd,244
-as,234
-ase,224
-asef,204
+[as,234, ase,224, asd,244, asdf,264, asef,204]

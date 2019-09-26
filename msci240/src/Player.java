@@ -5,17 +5,20 @@ public class Player {
 	
 	public Player (String name, int score) {
 		this.name = name;
-		if (score < 0 ) {
-			throw new IllegalArgumentException();
-		}
 		this.score = score;
 	}
 	
 	public String getName () {
+		if (this.name == null) {
+			throw new NullPointerException();
+		}
 		return this.name;
 	}
 	
 	public int getScore() {
 		return this.score;
+	}
+	public String toString () {
+		return this.name + "," + this.score;
 	}
 }
