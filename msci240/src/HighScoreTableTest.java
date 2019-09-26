@@ -113,10 +113,9 @@ public class HighScoreTableTest extends TestCase {
     
     //Add out of bound
     public void testAddIfZeroCapcity() {
-    	HighScoreTable x2 = new HighScoreTable(0);
-    	x2.add("Christiana", 1240);
-
         try {
+        	HighScoreTable x2 = new HighScoreTable(0);
+        	x2.add("Christiana", 1240);
         	assertEquals (1240, x2.getScore(0));
         	assertEquals ("Christiana", x2.getName(0));
         	fail ("Should not reach this point");
@@ -126,12 +125,11 @@ public class HighScoreTableTest extends TestCase {
     
     //Add negative score
     public void testAddNegativeScore() {
-    	HighScoreTable x2 = new HighScoreTable();
-    	x2.add("Christiana", -1240);
-    	
     	try {
+    		HighScoreTable x2 = new HighScoreTable();
+        	x2.add("Christiana", -1240);
     		assertEquals (-1240,x2.getScore(0));
-    	}catch (IllegalArgumentException e) {    		
+    	}catch (IndexOutOfBoundsException e) {    		
     	}
     }
     
@@ -191,11 +189,11 @@ public class HighScoreTableTest extends TestCase {
     
     //get name from empty array
     public void testGetNameEmpty() {
-    	HighScoreTable x = new HighScoreTable (7); 
     	try {	
+    		HighScoreTable x = new HighScoreTable (7);
     		assertNull (x.getName(0));
     		fail ("This should not reach this point");
-    	}catch(NullPointerException e) {
+    	}catch(IndexOutOfBoundsException e) {
     	}
     }
     
@@ -230,10 +228,11 @@ public class HighScoreTableTest extends TestCase {
     
     //Get a score from empty index
     public void testGetScoreEmpty() {
-    	HighScoreTable x = new HighScoreTable (7); 
+    	
     	try {
+    		HighScoreTable x = new HighScoreTable (7); 
     		assertNull (x.getName(0));
-    	}catch(NullPointerException e) {
+    	}catch(IndexOutOfBoundsException e) {
     	}
     }
     

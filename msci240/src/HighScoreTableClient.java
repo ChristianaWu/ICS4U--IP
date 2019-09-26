@@ -1,18 +1,13 @@
 
 public class HighScoreTableClient {
 
-	public static void main(String[] args) {
-		HighScoreTable x = new HighScoreTable (7);
+	public static void main(String[] args) throws IllegalArgumentException {
+		HighScoreTable x = new HighScoreTable(7);
+		x.add("f", -123);
+    
+    	System.out.println(x.size());
+
 		
-		System.out.println(x.getCapacity());
-		//System.out.println(x.getName(0));
-		
-		HighScoreTable x2 = new HighScoreTable (2);
-		x2.add("Christiana", 1240);
-    	x2.add("Paloma", 2240);
-    	x2.add("Sabrina", 2240);
-    	
-    	x2.toString();
 		
 	}
 

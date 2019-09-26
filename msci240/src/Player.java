@@ -6,16 +6,22 @@ public class Player {
 	public Player (String name, int score) {
 		this.name = name;
 		this.score = score;
+
 	}
 	
-	public String getName () {
+	public String getPlayerName () {
 		if (this.name == null) {
 			throw new NullPointerException();
 		}
 		return this.name;
 	}
 	
-	public int getScore() {
+	public int getPlayerScore() {
+		if (this.name == null) {
+			throw new NullPointerException();
+		}else if (this.score < 0) {
+			throw new IllegalArgumentException();
+		}
 		return this.score;
 	}
 	public String toString () {
