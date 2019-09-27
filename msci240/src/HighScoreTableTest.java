@@ -125,12 +125,10 @@ public class HighScoreTableTest extends TestCase {
     
     //Add negative score
     public void testAddNegativeScore() {
-    	try {
-    		HighScoreTable x2 = new HighScoreTable();
-        	x2.add("Christiana", -1240);
-    		assertEquals (-1240,x2.getScore(0));
-    	}catch (IndexOutOfBoundsException e) {    		
-    	}
+    	HighScoreTable x2 = new HighScoreTable();
+        x2.add("Christiana", -1240);
+    	assertEquals (-1240,x2.getScore(0));
+
     }
     
     //Add the same score
@@ -193,7 +191,7 @@ public class HighScoreTableTest extends TestCase {
     		HighScoreTable x = new HighScoreTable (7);
     		assertNull (x.getName(0));
     		fail ("This should not reach this point");
-    	}catch(IndexOutOfBoundsException e) {
+    	}catch(NullPointerException e) {
     	}
     }
     
@@ -232,7 +230,7 @@ public class HighScoreTableTest extends TestCase {
     	try {
     		HighScoreTable x = new HighScoreTable (7); 
     		assertNull (x.getName(0));
-    	}catch(IndexOutOfBoundsException e) {
+    	}catch(NullPointerException e) {
     	}
     }
     
@@ -275,14 +273,4 @@ public class HighScoreTableTest extends TestCase {
      	assertEquals ("asdf", x2.getName(0));
     }
     
-   /* public void testReadEmpty() throws FileNotFoundException {
-    	File file = new File ("High Score.txt");
-     	HighScoreTable x2 = HighScoreTable.read(file);
-     
-     	assertEquals (0, x2.getCapacity());
-     	assertEquals (0,x2.size());
-     	//assertEquals (, x2.getScore(0));
-     	//assertEquals ("asdf", x2.getName(0));
-    }
-    */
 }

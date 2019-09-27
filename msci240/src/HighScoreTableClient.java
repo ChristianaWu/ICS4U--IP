@@ -4,12 +4,12 @@ import java.io.FileNotFoundException;
 public class HighScoreTableClient {
 
 	public static void main(String[] args) throws IllegalArgumentException, FileNotFoundException {
-		File file = new File ("High Score.txt");
-     	HighScoreTable x2 = HighScoreTable.read(file);
+		HighScoreTable x2 = new HighScoreTable(1);
+     	x2.add("dfd", 11);
      	
-     	System.out.println(x2.getCapacity());
-     	System.out.println(x2.size());
-     	System.out.println(x2.getName(0) + "," + x2.getScore(0));
+     	x2.getName(-1);
+
+
 		
 		
 	}

@@ -19,8 +19,6 @@ public class Player {
 	public int getPlayerScore() {
 		if (this.name == null) {
 			throw new NullPointerException();
-		}else if (this.score < 0) {
-			throw new IllegalArgumentException();
 		}
 		return this.score;
 	}
