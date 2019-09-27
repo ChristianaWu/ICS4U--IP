@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 
 public class HighScoreTable {
@@ -37,9 +38,7 @@ public class HighScoreTable {
 		ArrayList<Player> list= new ArrayList<>();
 		Player holder, temp;
 		int i = 0;
-		if (score < 0) {
-			throw new IllegalArgumentException();
-		}
+
 		if (this.size == 0 ) {
 			this.ar[0] = p;
 			this.size++;
@@ -103,6 +102,38 @@ public class HighScoreTable {
 		PrintStream file2 = new PrintStream (file);
 		
 		file2.println(this.capacity);
+		file2.println(this.size);
+
+		for (int i = 0; i < this.size; i ++) {
+			file2.println(this.ar[i].toString());
+		}
+		
+	}
+	
+	public static HighScoreTable read (File file) throws FileNotFoundException{
+		HighScoreTable x;
+		Scanner fileIn = new Scanner (file);
+		String line;
+		
+		if (!fileIn.hasNextLine()) {
+			x = new HighScoreTable ();
+		}else {
+			int capacity = fileIn.nextInt();
+			x = new HighScoreTable (capacity);
+			int size = fileIn.nextInt();
+			fileIn.nextLine();
+			while (fileIn.hasNextLine()) {
+				line = fileIn.nextLine();
+				line = line.replace(",", " ");
+				Scanner lineSC = new Scanner (line);
+				
+				//String name = lineSC.next();
+				
+				x.add(lineSC.next(), lineSC.nextInt());
+			}
+			
+		}
+		return x;
 		
 	}
 	

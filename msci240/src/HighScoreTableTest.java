@@ -265,7 +265,7 @@ public class HighScoreTableTest extends TestCase {
     }
     
     //This check the writing to see if it is right
-   /* public void testRead() throws FileNotFoundException {
+   public void testRead() throws FileNotFoundException {
     	File file = new File ("High Score.txt");
      	HighScoreTable x2 = HighScoreTable.read(file);
      	
@@ -275,7 +275,7 @@ public class HighScoreTableTest extends TestCase {
      	assertEquals ("asdf", x2.getName(0));
     }
     
-    public void testReadEmpty() throws FileNotFoundException {
+   /* public void testReadEmpty() throws FileNotFoundException {
     	File file = new File ("High Score.txt");
      	HighScoreTable x2 = HighScoreTable.read(file);
      
