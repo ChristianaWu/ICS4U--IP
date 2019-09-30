@@ -40,7 +40,7 @@ public class HighScoreTableTest extends TestCase {
     public void testHighScoreTableNegativeCapacity() {        
         try {
         	HighScoreTable x = new HighScoreTable (-7);
-        }catch (NegativeArraySizeException e) { 	
+        }catch (IllegalArgumentException e) { 	
         }
     }
     
@@ -85,7 +85,7 @@ public class HighScoreTableTest extends TestCase {
     		HighScoreTable x = new HighScoreTable (-7);
     		assertEquals (7,x.getCapacity());
     		fail("Should not reach here");
-    	}catch (NegativeArraySizeException e) { 
+    	}catch (IllegalArgumentException e) { 
     	}
     }
     
@@ -191,7 +191,7 @@ public class HighScoreTableTest extends TestCase {
     		HighScoreTable x = new HighScoreTable (7);
     		assertNull (x.getName(0));
     		fail ("This should not reach this point");
-    	}catch(NullPointerException e) {
+    	}catch(IllegalArgumentException e) {
     	}
     }
     
@@ -206,7 +206,7 @@ public class HighScoreTableTest extends TestCase {
     	
     	try {
     		assertEquals (null, x.getName(-5));
-    	}catch (ArrayIndexOutOfBoundsException e ) {
+    	}catch (IllegalArgumentException e ) {
     	}
     }
     
@@ -230,7 +230,7 @@ public class HighScoreTableTest extends TestCase {
     	try {
     		HighScoreTable x = new HighScoreTable (7); 
     		assertNull (x.getName(0));
-    	}catch(NullPointerException e) {
+    	}catch(IllegalArgumentException e) {
     	}
     }
     
@@ -245,7 +245,7 @@ public class HighScoreTableTest extends TestCase {
     	
     	try {
     		assertEquals (null, x.getName(-5));
-    	}catch (ArrayIndexOutOfBoundsException e ) {
+    	}catch (IllegalArgumentException e ) {
     	}
     }
     
@@ -272,5 +272,51 @@ public class HighScoreTableTest extends TestCase {
      	assertEquals (264, x2.getScore(0));
      	assertEquals ("asdf", x2.getName(0));
     }
+   
+   public void testReadWithNameSpace() throws FileNotFoundException {
+   		File file = new File ("High Score.txt");
+   	
+   		HighScoreTable x = new HighScoreTable ();
+   		x.add("as dfdff ddd", 234);
+   		x.add("ase", 224);
+   		x.add("asd", 244);
+   		x.add("as dfdff ddd", 264);
+   		x.add("asef", 204);
+   		x.write(file);
+   		
+    	HighScoreTable x2 = HighScoreTable.read(file);
+    	
+    	assertEquals (10, x2.getCapacity());
+    	assertEquals (5,x2.size());
+    	assertEquals (264, x2.getScore(0));
+    	assertEquals ("as dfdff ddd", x2.getName(0));
+   }
+   
+   public void testAddManyOfSame () {
+	   HighScoreTable x2 = new HighScoreTable(7);
+		x2.add("a", 11);
+		x2.add("b", 11);
+		x2.add("c", 11);
+		x2.add("d", 11); 
+		
+		assertEquals("a", x2.getName(0));
+		assertEquals("b", x2.getName(1));
+		assertEquals("c", x2.getName(2));
+		
+   }
+   
+   public void testAddManyNagetives () {
+	   HighScoreTable x2 = new HighScoreTable(7);
+		x2.add("a", -11);
+		x2.add("b", -1);
+		x2.add("c", -111);
+		x2.add("d", -211); 
+		
+		assertEquals(-1, x2.getScore(0));
+		assertEquals(-11, x2.getScore(1));
+		assertEquals(-111, x2.getScore(2));
+		
+   }
+		
     
 }

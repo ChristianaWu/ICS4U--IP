@@ -44,9 +44,6 @@ public class HighScoreTable {
 		Player p = new Player (name,score);
 		int i = 0;
 		
-		if (score< 0) {
-			throw new IllegalArgumentException();
-		}
 		if (this.size == 0 ) {
 			this.ar[0] = p;
 			this.size++;
@@ -59,14 +56,22 @@ public class HighScoreTable {
 				}
 				i++;
 			}
-			
 			try {
 				if (score > this.ar[i].getPlayerScore()) {
 					this.ar = moveAndAdd (this.ar, i, p, this.size);
 				}else if (score == this.ar[i].getPlayerScore()) {
-					this.ar = moveAndAdd (this.ar, i+1, p, this.size);
+					if (score != this.ar[i+1].getPlayerScore()) {
+						this.ar = moveAndAdd (this.ar, i+1, p, this.size);
+					}else {
+						while(i < this.size) {
+							if (score ==this.ar[i].getPlayerScore() && score !=this.ar[i+1].getPlayerScore() ) {
+								break;
+							}
+							i++;
+						}
+						this.ar = moveAndAdd (this.ar, i+1, p, this.size);
+					}	
 				}
-				
 				if (this.size != this.capacity) {
 					this.size++;
 				}
@@ -74,9 +79,7 @@ public class HighScoreTable {
 				this.ar[this.size] = p;
 				this.size++;
 			}
-			
 		}
-		
 	}
 	
 	private static Player[] moveAndAdd (Player[] ar, int i, Player p, int size) {
@@ -91,30 +94,28 @@ public class HighScoreTable {
 		for (int z = i+1; z <size; z++) {
 			temp = ar[z];
 			ar[z] = holder;
-			holder = temp;
-			
+			holder = temp;	
 		}
 	
 		return ar;
 	}
 	
 	public String getName (int i) throws NullPointerException{
+		 try {
+			 return ar[i].getPlayerName();
+		 }catch (Exception e) {
+			 throw new IllegalArgumentException();
+		 }
 		
-		if (i < 0 ) { 
-			throw new IllegalArgumentException(); 
-		}
-		 
-		return ar[i].getPlayerName();
 		
 	}
 	
 	public int getScore (int i) throws NullPointerException{
-		
-		 if (i < 0 ) { 
+		 try {
+			 return ar[i].getPlayerScore();
+		 }catch (Exception e) {
 			 throw new IllegalArgumentException();
 		 }
-		 
-		return ar[i].getPlayerScore();
 	}
 	
 	public void write (File file) throws FileNotFoundException {
@@ -133,6 +134,7 @@ public class HighScoreTable {
 		HighScoreTable x;
 		Scanner fileIn = new Scanner (file);
 		String line;
+		String[] split;
 		
 		if (!fileIn.hasNextLine()) {
 			x = new HighScoreTable ();
@@ -143,10 +145,14 @@ public class HighScoreTable {
 			fileIn.nextLine();
 			while (fileIn.hasNextLine()) {
 				line = fileIn.nextLine();
-				line = line.replace(",", " ");
-				Scanner lineSC = new Scanner (line);
+				//line = line.replace(",", " ");
+				//Scanner lineSC = new Scanner (line);
+				split = line.split(",");
 				
-				x.add(lineSC.next(), lineSC.nextInt());
+				x.add(split[0], Integer.parseInt(split[1]));
+				
+				
+				//x.add(lineSC.next(), lineSC.nextInt());
 			}
 			
 		}
