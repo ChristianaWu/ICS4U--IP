@@ -6,7 +6,7 @@ public class ListNodeMethods {
     // after list = append(list, 3):
     //    list -> 1 -> 2 -> 3
     public static ListNode append(ListNode list, int value) {
-        // TODO: add your code for Q1 here
+    	list.next.next= new ListNode (value);
         return list;
     }
     
@@ -15,7 +15,9 @@ public class ListNodeMethods {
     // after list = prepend(list, 3):
     //    list -> 3 -> 1 -> 2
     public static ListNode prepend(ListNode list, int value) {
-        // TODO: add your code for Q2 here
+        ListNode temp = new ListNode (3);
+        temp.next = list;
+        list = temp;
         return list;
     }
     
@@ -25,7 +27,11 @@ public class ListNodeMethods {
     // after:
     //   return list -> 5 -> 3 -> 4 -> 2
     public static ListNode rearrangeLists(ListNode list, ListNode temp) {
-        // TODO: add your code for Q3 here
+        ListNode x = temp.next.next;
+        x.next = list.next.next.next;
+        x.next.next = temp.next;
+        x.next.next.next = list.next.next;
+        list = x;
         return list;
     }
 }
