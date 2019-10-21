@@ -22,9 +22,9 @@ public class Meeting {
 		
 		for (int row = 0; row < inputValue.size(); row++) {
 			in = inputValue.get(row);
-			Scanner input2 = new Scanner (in);
-			courseList [row][0] = input2.next();
-			courseList [row][1] = input2.next();
+			int index = in.indexOf(" ");
+			courseList [row][0] = in.substring(0, index);
+			courseList [row][1] = in.substring(index);			
 		}
 		
 		int i = 0;
