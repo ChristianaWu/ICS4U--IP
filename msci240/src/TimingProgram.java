@@ -20,13 +20,16 @@ public class TimingProgram {
         // TODO: REPLACE THIS CODE WITH YOUR OWN AS NEEDED
         //
         // we can measure the time to move with the methods as follows:
-        int size = 1000;
+        int size = 10000;
         int minSamples = 1; // usually want a larger value, but for this exercise,
                             // this is good enough
-        double time = measureTimeToMove(minSamples, size, rng);
-
-        // and we can output the results in a comma delimited format
-        System.out.printf("moveMinToFrontA,%d,%.18f\n", size, time);
+        for (int i = 0; i < 10; i++) {
+	        double time = measureTimeToMove(minSamples, size, rng);
+	
+	        // and we can output the results in a comma delimited format
+	        System.out.printf("moveMinToFrontA,%d,%.18f\n", size, time);
+	        size+=10000;
+        }
     }
 
     /**
