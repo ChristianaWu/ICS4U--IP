@@ -13,6 +13,6 @@ public class testing{
 		ar.add("Morgan");
 		ar.add("Char");
 		
-		HomeworkFour.writeSquares(5);
+		HomeworkFour.subsets(ar);
 	}	
 }

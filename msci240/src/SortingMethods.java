@@ -1,6 +1,6 @@
 
 public class SortingMethods {
-	public static int[] dualSelectionSort (int[] ar) {
+	public static void dualSelectionSort (int[] ar) {
 		int max,min,length;
 		
 		for (int i = 0 ; i <ar.length/2; i++) {
@@ -18,11 +18,9 @@ public class SortingMethods {
 			swap(ar,i,min);
 			swap (ar,length, max);
 		}
-		
-		return ar;
 	}
 	
-	private static void swap(int [] ar, int i, int min) {
+	public static void swap(int [] ar, int i, int min) {
 		int holder; 
 		holder = ar[i];
 		ar[i] = ar[min];

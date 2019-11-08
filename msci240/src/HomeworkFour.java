@@ -1,3 +1,13 @@
+/*
+ * Christiana Wu
+ * November 1, 2019 
+ * Homework 4
+ * Input this is modulus that therefore tere is not direct input to these but 
+ * when the method is called there are int inouts and a list input 
+ * Output these are strings that are print
+ */
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class HomeworkFour {
@@ -35,14 +45,20 @@ public class HomeworkFour {
 	}
 	
 	public static void subsets (List<String> x) {
-		int n = 0;
-		if (n == x.size()-1) {
+		subsets(x,0);
+		
+	}
+	
+	private static void subsets(List<String> x, int length) {
+		if (length == x.size()) {
 			System.out.println(x.toString());
 		}else {
-			List <String> y = x.subList(0, n++);
-			subsets(y);
-			System.out.println(y.toString());
+			length++;
+			subsets(x,length);
+			List<String> c= new ArrayList<String>();
+			c.addAll(x);
+			c.remove(length-1);
+			subsets (c,length-1);
 		}
-		
 	}
 }
