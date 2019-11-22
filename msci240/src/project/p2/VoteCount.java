@@ -23,7 +23,7 @@ package project.p2;
  * @author Mark Hancock
  *
  */
-public class VoteCount {
+public class VoteCount  implements Comparable<VoteCount>{
     private String candidateKey;
     private String ridingKey;
     private String partyKey;
@@ -37,40 +37,45 @@ public class VoteCount {
     private int totalRidingVotes;
 
     public VoteCount(String candidateKey, String ridingKey, String partyAbbrv) {
-	this.candidateKey = candidateKey;
-	this.ridingKey = ridingKey;
-	this.partyKey = partyAbbrv;
-
-	this.votes = 0;
-	this.totalRidingVotes = 0;
+    	this.candidateKey = candidateKey;
+		this.ridingKey = ridingKey;
+		this.partyKey = partyAbbrv;
+	
+		this.votes = 0;
+		this.totalRidingVotes = 0;
     }
 
     public double getVoteSharePercent() {
-	return 100.0 * votes / totalRidingVotes;
+    	return 100.0 * votes / totalRidingVotes;
     }
 
     public void addVotes(int votes) {
-	this.votes += votes;
+    	this.votes += votes;
+    }
+    
+    //added
+    public int getRidingVotes() {
+    	return this.totalRidingVotes;
     }
 
     public void addRidingVotes(int votes) {
-	this.totalRidingVotes += votes;
+    	this.totalRidingVotes += votes;
     }
 
     public String getCandidateName() {
-	return candidateName;
+    	return candidateName;
     }
 
     public void setCandidateName(String candidateName) {
-	this.candidateName = candidateName;
+    	this.candidateName = candidateName;
     }
 
     public String getRidingName() {
-	return ridingName;
+    	return ridingName;
     }
 
     public void setRidingName(String ridingName) {
-	this.ridingName = ridingName;
+    	this.ridingName = ridingName;
     }
 
     public String getRidingProvince() {
@@ -108,4 +113,10 @@ public class VoteCount {
     public int getVotes() {
 	return votes;
     }
+
+	@Override
+	public int compareTo(VoteCount o) {
+		// TODO Auto-generated method stub
+		return Double.compare(this.getVoteSharePercent(), o.getVoteSharePercent());
+	}
 }
