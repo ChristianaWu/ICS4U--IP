@@ -44,7 +44,7 @@ public class Program {
     private static final int MAX_RESULTS = 100000;
     //private static final int MAX_RESULTS = Integer.MAX_VALUE;
 
-    private static final int MAX_CANDIDATES = 1000;
+    private static final int MAX_CANDIDATES = 800;
     //private static final int MAX_CANDIDATES = Integer.MAX_VALUE;
 
     private static Stopwatch stopwatch = new Stopwatch();
