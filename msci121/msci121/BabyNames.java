@@ -35,7 +35,7 @@ public class BabyNames extends PApplet {
 		while (file.hasNextLine()) { // This is scanning the file line by line 
 			fileName = file.next(); // getting the first token 
 			if (name.equalsIgnoreCase(fileName)) { // Checking if the name is in the file 
-				System.out.println("Populatrity ranking of name: \"" + name + "\"");
+				System.out.println("Populatrity rankingg of name: \"" + name + "\"");
 				int x = 0;
 				for (int i = 0; i<=DECADES-1; i++) {
 					token = file.next();
