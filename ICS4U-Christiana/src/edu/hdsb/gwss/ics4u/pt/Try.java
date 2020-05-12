@@ -20,7 +20,7 @@ public class Try {
        Scanner input = new Scanner(System.in);
        
        int x = 4;
-       int sum;
+       int sum=0;
         
         while (x != 0) {
            sum = sum+x;
