@@ -1,0 +1,7 @@
+Q:is it a vehicle?
+A:truck
+Q:is it structure?
+Q:Is your structure tall?
+A:cn tower
+A:bridge
+A:Jedi

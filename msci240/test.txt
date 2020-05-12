@@ -1,0 +1,5 @@
+Q:is it an animal?
+Q:does your iteam hop?
+A:rabbit
+A:cat
+A:Jedi

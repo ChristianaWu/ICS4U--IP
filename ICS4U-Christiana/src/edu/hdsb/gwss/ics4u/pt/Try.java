@@ -19,7 +19,7 @@ public class Try {
     public static void main(String[] args) {
        Scanner input = new Scanner(System.in);
        
-       int x = ;
+       int x = 4;
        int sum;
         
         while (x != 0) {
